@@ -2,12 +2,21 @@
 
 <head>
     <title>Gestion de procesos - Status</title>
+    <script>
+        function setStatus(name) {
+            const iframe = document.getElementById('statusframe');
+            iframe.src = `https://${name}.gestionprocesos.com/`;
+        }
+    </script>
 </head>
 
 <body>
+    <button onclick="setStatus('status')">Stats general</button>
+    <button onclick="setStatus('apistatus')">Stats api</button>
     <iframe
+            id="statusframe"
         style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"
-        src="https://status.gestionprocesos.com/"></iframe>
+        src="https://apistatus.gestionprocesos.com/"></iframe>
 </body>
 
 </html>
